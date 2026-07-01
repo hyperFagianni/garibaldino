@@ -1,0 +1,275 @@
+/* ============================================================
+   GARIBALDINO — ANIMATIONS & KEYFRAMES
+   ============================================================ */
+
+/* === KEYFRAMES === */
+
+@keyframes preloaderPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}
+
+@keyframes preloaderSlide {
+  0%   { left: -100%; }
+  100% { left: 100%;  }
+}
+
+@keyframes heroReveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatDown {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(8px); }
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: scaleY(1); transform-origin: top; }
+  50%       { transform: scaleY(0.4); transform-origin: top; }
+}
+
+@keyframes pulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.5); opacity: 0.6; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0);     }
+}
+
+@keyframes fadeRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0);    }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1);   }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+@keyframes mobileNavReveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes counterUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(199,168,107,0.2); }
+  50%       { box-shadow: 0 0 40px rgba(199,168,107,0.4); }
+}
+
+@keyframes borderTrail {
+  0%   { clip-path: inset(0 100% 0 0); }
+  100% { clip-path: inset(0 0% 0 0);   }
+}
+
+/* === SCROLL REVEAL CLASSES === */
+/* Applied via IntersectionObserver in main.js */
+
+.reveal {
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(36px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              filter 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateX(-50px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              filter 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.reveal-left.visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateX(50px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              filter 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.reveal-right.visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  filter: blur(8px);
+  transform: scale(0.92);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              filter 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.reveal-scale.visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1);
+}
+
+/* Stagger delays for children */
+.stagger > * {
+  opacity: 0;
+  filter: blur(6px);
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              filter 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stagger.visible > *:nth-child(1)  { opacity: 1; filter: blur(0); transform: translateY(0); transition-delay: 0.05s; }
+.stagger.visible > *:nth-child(2)  { opacity: 1; filter: blur(0); transform: translateY(0); transition-delay: 0.10s; }
+.stagger.visible > *:nth-child(3)  { opacity: 1; filter: blur(0); transform: translateY(0); transition-delay: 0.15s; }
+.stagger.visible > *:nth-child(4)  { opacity: 1; filter: blur(0); transform: translateY(0); transition-delay: 0.20s; }
+.stagger.visible > *:nth-child(5)  { opacity: 1; filter: blur(0); transform: translateY(0); transition-delay: 0.25s; }
+.stagger.visible > *:nth-child(6)  { opacity: 1; filter: blur(0); transform: translateY(0); transition-delay: 0.30s; }
+.stagger.visible > *:nth-child(7)  { opacity: 1; filter: blur(0); transform: translateY(0); transition-delay: 0.35s; }
+.stagger.visible > *:nth-child(8)  { opacity: 1; filter: blur(0); transform: translateY(0); transition-delay: 0.40s; }
+.stagger.visible > *:nth-child(n+9){ opacity: 1; filter: blur(0); transform: translateY(0); transition-delay: 0.45s; }
+
+/* === TEXT SHIMMER EFFECT (gold headings on hover) === */
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    var(--gold-dark) 0%,
+    var(--gold-light) 30%,
+    var(--gold) 50%,
+    var(--gold-light) 70%,
+    var(--gold-dark) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* === ANIMATED UNDERLINE === */
+.animated-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 1px;
+  background: var(--gold);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animated-underline:hover::after { width: 100%; }
+
+/* === CARD HOVER GLOW === */
+.glow-card {
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.glow-card:hover {
+  box-shadow: 0 0 30px rgba(199,168,107,0.2), 0 20px 40px rgba(0,0,0,0.5);
+  transform: translateY(-4px);
+}
+
+/* === PAGE TRANSITION === */
+.page-transition {
+  position: fixed;
+  inset: 0;
+  background: var(--black);
+  z-index: 99998;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* === PARALLAX LAYER === */
+.parallax-layer {
+  will-change: transform;
+  transition: transform 0.05s linear;
+}
+
+/* === COUNTER ANIMATION === */
+.counter {
+  display: inline-block;
+  font-family: var(--font-numbers);
+  font-weight: 700;
+}
+
+/* === MAGNETIC BUTTON === */
+.magnetic {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* === ENTRANCE ON LOAD === */
+.entrance {
+  animation: fadeUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.entrance-1 { animation-delay: 0.1s; }
+.entrance-2 { animation-delay: 0.2s; }
+.entrance-3 { animation-delay: 0.3s; }
+.entrance-4 { animation-delay: 0.4s; }
+
+/* === HOVER LIFT === */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+/* === GOLD GLOW PULSE === */
+.glow-pulse {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* === FILTER TRANSITION (for menu filtering) === */
+.filter-item {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.filter-item.hiding {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.filter-item.showing {
+  animation: scaleIn 0.3s ease forwards;
+}

@@ -1,0 +1,421 @@
+/* ============================================================
+   GARIBALDINO — RESPONSIVE STYLES v2
+   Breakpoints: 1280 / 1024 / 768 / 480
+   ============================================================ */
+
+/* === MASONRY 3 COLS (≥ 768px) === */
+@media (min-width: 768px) {
+  .masonry { columns: 3; }
+}
+
+/* === LARGE DESKTOP (≤ 1280px) === */
+@media (max-width: 1280px) {
+  :root { --section-py: 96px; }
+  .container { padding: 0 32px; }
+  .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; }
+}
+
+/* === TABLET LANDSCAPE (≤ 1024px) === */
+@media (max-width: 1024px) {
+  :root {
+    --section-py: 80px;
+    --nav-h: 70px;
+  }
+
+  /* Navbar */
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .nav-logo-text { display: block; }
+
+  /* Hero */
+  .hero-title { font-size: clamp(2.5rem, 8vw, 5rem); }
+
+  /* Experience cards */
+  .experience-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .experience-grid .exp-card:last-child {
+    grid-column: 1 / -1;
+    height: 280px;
+  }
+
+  /* Aperitivo */
+  .aperitivo-inner { grid-template-columns: 1fr; gap: 48px; }
+  .aperitivo-visual img { height: 320px; }
+
+  /* Cucina split */
+  .cucina-split { grid-template-columns: 1fr; }
+  .cucina-sticky-col { position: static; }
+  .cucina-sticky-img { height: 280px; }
+
+  /* Reviews */
+  .reviews-layout { grid-template-columns: 1fr; gap: 40px; }
+  .reviews-score-col { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 24px; }
+  .reviews-big-score { font-size: 4rem; }
+  .reviews-cards-grid { grid-template-columns: repeat(3, 1fr); }
+
+  /* Contacts */
+  .contatti-grid { grid-template-columns: 1fr; gap: 40px; }
+  .contatti-map-col { min-height: 320px; }
+  .contatti-map iframe { min-height: 320px; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+  .footer-grid > *:first-child { grid-column: 1 / -1; }
+}
+
+/* === TABLET PORTRAIT (≤ 768px) === */
+@media (max-width: 768px) {
+  :root {
+    --section-py: 64px;
+    --nav-h: 64px;
+  }
+
+  .container { padding: 0 20px; }
+
+  /* Navbar */
+  .nav-inner { padding: 0 20px; }
+  .nav-mobile { display: flex; }
+  .nav-logo-text { display: none; }
+
+  /* Hero */
+  .hero-title { font-size: clamp(2.2rem, 10vw, 4.5rem); letter-spacing: 0.08em; }
+  .hero-actions { flex-direction: column; align-items: center; gap: 10px; }
+  .hero-actions .btn { width: 100%; max-width: 280px; }
+
+  /* Experience */
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .experience-grid .exp-card:last-child {
+    grid-column: auto;
+    height: 360px;
+  }
+  .exp-card { height: 360px; }
+
+  /* Section headers */
+  .section-title { font-size: clamp(1.75rem, 5vw, 2.5rem); }
+
+  /* Menu tabs */
+  .menu-tabs { gap: 6px; }
+  .menu-tab { padding: 7px 14px; font-size: 0.62rem; }
+
+  /* Menu grid */
+  .menu-grid { grid-template-columns: 1fr; }
+
+  /* Cocktail filter */
+  .cocktail-filter { gap: 6px; }
+  .cocktail-filter-btn { padding: 7px 14px; font-size: 0.62rem; }
+
+  /* Cocktail grid */
+  .cocktail-grid { grid-template-columns: 1fr; }
+
+  /* Cucina categories */
+  .cucina-categories { gap: 6px; overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; justify-content: flex-start; padding-bottom: 8px; }
+  .cucina-cat-btn { white-space: nowrap; flex-shrink: 0; }
+
+  /* Vini grid */
+  .vini-grid { grid-template-columns: 1fr; }
+  .vini-tabs { gap: 6px; }
+  .vini-tab { padding: 7px 14px; font-size: 0.62rem; }
+
+  /* Reviews */
+  .reviews-cards-grid { grid-template-columns: 1fr; }
+  .reviews-score-col { text-align: center; align-items: center; }
+
+  /* Booking form */
+  .booking-form-glass { padding: 28px 24px; }
+  .form-row { grid-template-columns: 1fr; }
+  .prenota-content { padding: 0 16px; }
+
+  /* Gallery masonry */
+  .masonry { columns: 2; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+}
+
+/* === MOBILE (≤ 480px) === */
+@media (max-width: 480px) {
+  :root {
+    --section-py: 52px;
+    --nav-h: 60px;
+  }
+
+  .container { padding: 0 16px; }
+
+  /* Hero */
+  .hero-logo-circle { width: 72px; height: 72px; }
+  .hero-logo-circle-letter { font-size: 1.9rem; }
+  .hero-title { letter-spacing: 0.07em; }
+  .hero-claim { letter-spacing: 0.25em; }
+  .hero-scroll { display: none; }
+
+  /* Buttons */
+  .btn { padding: 13px 22px; font-size: 0.72rem; letter-spacing: 0.12em; }
+
+  /* Section label */
+  .section-label { font-size: 0.62rem; }
+
+  /* Cocktail cards */
+  .cocktail-card { padding: 20px; }
+
+  /* Gallery */
+  .masonry { columns: 1; }
+
+  /* Reviews */
+  .reviews-big-score { font-size: 3.5rem; }
+
+  /* Booking */
+  .booking-form-glass { padding: 24px 18px; }
+
+  /* Back to top */
+  #back-to-top { bottom: 20px; right: 20px; }
+}
+
+/* === REDUCED MOTION === */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .hero-bg { transform: none !important; }
+  .reveal, .reveal-left, .reveal-right, .reveal-scale { opacity: 1; filter: none; transform: none; }
+  .stagger > * { opacity: 1; filter: none; transform: none; }
+}
+
+/* === HIGH CONTRAST === */
+@media (forced-colors: active) {
+  .btn-gold    { background: ButtonText; color: ButtonFace; }
+  .btn-outline { border-color: ButtonText; color: ButtonText; }
+  .nav-cta     { background: ButtonText; color: ButtonFace; }
+}
+
+/* === PRINT === */
+@media print {
+  #navbar, #preloader, #scroll-progress, #back-to-top,
+  .hero-scroll, .hero-actions, footer .footer-bottom div { display: none !important; }
+  body { background: white; color: black; }
+  .container { max-width: 100%; padding: 0 24px; }
+  .cocktail-card, .menu-item, .cucina-item { border: 1px solid #ccc; break-inside: avoid; }
+}
+
+/* === LARGE DESKTOP (≤ 1280px) === */
+@media (max-width: 1280px) {
+  :root { --section-py: 100px; }
+
+  .container { padding: 0 32px; }
+
+  .footer-top { grid-template-columns: 1.5fr 1fr 1fr; }
+  .footer-top > *:last-child { grid-column: 1 / -1; }
+}
+
+/* === TABLET LANDSCAPE (≤ 1024px) === */
+@media (max-width: 1024px) {
+  :root {
+    --section-py: 80px;
+    --nav-h: 70px;
+  }
+
+  /* Navbar */
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+
+  /* Hero */
+  .hero-logo { font-size: clamp(2.5rem, 8vw, 5rem); }
+
+  /* Experience */
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  /* Aperitivo */
+  .aperitivo-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .aperitivo-visual {
+    max-width: 480px;
+    aspect-ratio: 4/3;
+  }
+
+  /* Reviews */
+  .reviews-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Booking */
+  .booking-inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  /* Contacts */
+  .contatti-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  /* Gallery */
+  .gallery-grid { columns: 2; }
+
+  /* Footer */
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
+}
+
+/* === TABLET PORTRAIT (≤ 768px) === */
+@media (max-width: 768px) {
+  :root {
+    --section-py: 64px;
+    --nav-h: 64px;
+  }
+
+  .container { padding: 0 20px; }
+
+  .section-number { display: none; }
+
+  /* Navbar */
+  .nav-inner { padding: 0 20px; }
+  .nav-mobile { display: flex; }
+
+  /* Hero */
+  .hero-logo { font-size: clamp(2rem, 10vw, 4rem); letter-spacing: 0.08em; }
+  .hero-actions { gap: 12px; }
+  .hero-actions .btn { padding: 13px 24px; font-size: 0.7rem; }
+
+  /* Section headers */
+  .section-title { font-size: clamp(1.8rem, 5vw, 2.5rem); }
+
+  /* Menu tabs */
+  .menu-tabs { gap: 6px; }
+  .menu-tab { padding: 7px 14px; font-size: 0.65rem; }
+
+  /* Menu grid */
+  .menu-grid { grid-template-columns: 1fr; }
+
+  /* Cocktail filter */
+  .cocktail-filter-btn { padding: 7px 14px; font-size: 0.65rem; }
+
+  /* Cocktail grid */
+  .cocktail-grid { grid-template-columns: 1fr; }
+
+  /* Cucina list */
+  .cucina-list { grid-template-columns: 1fr; }
+
+  /* Vini list */
+  .vini-list { grid-template-columns: 1fr; }
+
+  /* Reviews */
+  .reviews-grid { grid-template-columns: 1fr; }
+  .reviews-rating-hero { gap: 24px; }
+  .reviews-score { font-size: 5rem; }
+
+  /* Booking form */
+  .booking-form { padding: 32px 24px; }
+  .form-row { grid-template-columns: 1fr; }
+
+  /* Gallery */
+  .gallery-grid { columns: 2; }
+
+  /* Footer */
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+
+  /* Experience cards */
+  .exp-card { padding: 24px; }
+
+  /* Aperitivo */
+  .aperitivo-visual { display: none; }
+
+  /* Vini tabs */
+  .vini-tabs { gap: 0; overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
+  .vini-tab { white-space: nowrap; flex-shrink: 0; }
+}
+
+/* === MOBILE (≤ 480px) === */
+@media (max-width: 480px) {
+  :root {
+    --section-py: 52px;
+    --nav-h: 60px;
+  }
+
+  .container { padding: 0 16px; }
+
+  /* Hero */
+  .hero-logo { letter-spacing: 0.06em; }
+  .hero-claim { letter-spacing: 0.25em; }
+  .hero-scroll { display: none; }
+
+  /* Buttons */
+  .btn { padding: 13px 22px; font-size: 0.7rem; letter-spacing: 0.12em; }
+
+  /* Section label */
+  .section-label { font-size: 0.6rem; }
+  .section-label::after { width: 24px; }
+
+  /* Cocktail cards */
+  .cocktail-card { padding: 28px 22px; }
+
+  /* Gallery */
+  .gallery-grid { columns: 1; }
+
+  /* Reviews hero */
+  .reviews-rating-hero { flex-direction: column; }
+
+  /* Booking */
+  .booking-form { padding: 24px 18px; }
+
+  /* Back to top */
+  #back-to-top { bottom: 20px; right: 20px; }
+
+  /* Footer */
+  .footer-legal { flex-wrap: wrap; gap: 12px; justify-content: center; }
+}
+
+/* === REDUCED MOTION === */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-bg { transform: none !important; }
+  .reveal, .reveal-left, .reveal-right, .reveal-scale { opacity: 1; transform: none; }
+  .stagger > * { opacity: 1; transform: none; }
+}
+
+/* === HIGH CONTRAST (accessibility) === */
+@media (forced-colors: active) {
+  .btn-gold       { background: ButtonText; color: ButtonFace; }
+  .btn-outline    { border-color: ButtonText; color: ButtonText; }
+  .nav-cta        { background: ButtonText; color: ButtonFace; }
+}
+
+/* === PRINT === */
+@media print {
+  #navbar, #preloader, #scroll-progress, #back-to-top,
+  .hero-scroll, .hero-actions, footer .footer-legal { display: none !important; }
+
+  body  { background: white; color: black; }
+  .container { max-width: 100%; padding: 0 24px; }
+
+  .cocktail-card,
+  .menu-item,
+  .cucina-item {
+    border: 1px solid #ccc;
+    break-inside: avoid;
+  }
+}
