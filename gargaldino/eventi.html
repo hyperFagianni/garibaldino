@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="it" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Eventi — Garibaldino | Media Gallery</title>
+  <meta name="description" content="Scopri gli eventi Garibaldino con gallery media dedicata: immagini e video con dettagli completi." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://garibaldino.it/eventi.html" />
+
+  <link rel="icon" href="img/logo_1.jpg" />
+  <meta name="theme-color" content="#0E0E0E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+
+<body>
+  <div id="preloader" role="status" aria-label="Caricamento in corso">
+    <div class="preloader-logo">Garibaldino</div>
+    <div class="preloader-bar"></div>
+  </div>
+
+  <div id="scroll-progress" role="progressbar" aria-hidden="true"></div>
+
+  <nav id="navbar" role="navigation" aria-label="Navigazione principale">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Garibaldino - Torna alla home">
+        <div class="nav-logo-circle"><img src="img/logo_1.jpg" alt="Logo Garibaldino" /></div>
+        <div class="nav-logo-text">Garibaldino</div>
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="index.html#cocktails">Cocktail</a></li>
+        <li><a class="nav-link" href="index.html#cucina">Cucina</a></li>
+        <li><a class="nav-link" href="index.html#vini">Vini</a></li>
+        <li><a class="nav-link active" href="eventi.html" aria-current="page">Eventi</a></li>
+        <li><a class="nav-link" href="index.html#contatti">Contatti</a></li>
+        <li><a class="nav-link" href="menu.html">Tutto il Menu</a></li>
+        <li><a class="nav-cta magnetic" href="index.html#prenota">Prenota</a></li>
+      </ul>
+
+      <button class="nav-hamburger" aria-label="Apri menu" aria-expanded="false" aria-controls="nav-mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div id="nav-mobile-menu" class="nav-mobile" role="dialog" aria-label="Menu di navigazione" aria-modal="true">
+    <a class="nav-mobile-link" href="index.html">Home</a>
+    <a class="nav-mobile-link" href="index.html#cocktails">Cocktail</a>
+    <a class="nav-mobile-link" href="index.html#cucina">Cucina</a>
+    <a class="nav-mobile-link" href="index.html#vini">Vini</a>
+    <a class="nav-mobile-link" href="eventi.html" style="color:var(--gold)">Eventi</a>
+    <a class="nav-mobile-link" href="index.html#contatti">Contatti</a>
+    <a class="nav-mobile-link" href="menu.html">Tutto il Menu</a>
+    <a class="nav-mobile-link" href="index.html#prenota" style="color:var(--gold)">Prenota</a>
+  </div>
+
+  <section class="menu-page-hero" aria-label="Pagina eventi">
+    <div class="container">
+      <a href="index.html" class="menu-page-back" aria-label="Torna alla home">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+        Home
+      </a>
+      <div class="section-label reveal">
+        <span class="section-label-line"></span>
+        Eventi Live
+      </div>
+      <h1 class="section-title reveal" style="font-size:clamp(2.2rem,5vw,3.5rem);">Eventi</h1>
+      <p class="section-subtitle reveal">Gallery eventi gestita direttamente dallo staff con upload immagini e video, salvata online e condivisa tra tutti i visitatori.</p>
+    </div>
+  </section>
+
+  <section id="eventi" class="section-pad" aria-label="Eventi" style="padding-top:32px;">
+    <div class="container">
+      <div id="eventi-grid" class="eventi-grid stagger" aria-live="polite" aria-label="Griglia eventi"></div>
+    </div>
+  </section>
+
+  <div id="eventi-admin" aria-hidden="true">
+    <div class="eventi-admin-panel" role="dialog" aria-modal="true" aria-label="Pannello admin eventi" tabindex="-1">
+      <button type="button" class="eventi-admin-close" id="eventi-admin-close" aria-label="Chiudi pannello admin eventi">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+
+      <div class="eventi-admin-title">Eventi Admin</div>
+      <p class="eventi-admin-subtitle">
+        Carica contenuti direttamente: immagine o video, titolo e descrizione. I salvataggi finiscono nel cloud Netlify e sono visibili a tutti. Accesso protetto da PIN.
+      </p>
+
+      <div class="eventi-admin-form">
+        <div class="eventi-admin-field">
+          <label for="eventi-admin-file">Media (immagine o video)</label>
+          <input id="eventi-admin-file" class="eventi-admin-input" type="file" accept="image/*,video/*" />
+        </div>
+        <div class="eventi-admin-field">
+          <label for="eventi-admin-title">Titolo</label>
+          <input id="eventi-admin-title" class="eventi-admin-input" type="text" maxlength="90" placeholder="Es. Live DJ Set" />
+        </div>
+        <div class="eventi-admin-field">
+          <label for="eventi-admin-desc">Descrizione</label>
+          <textarea id="eventi-admin-desc" class="eventi-admin-textarea" maxlength="1200" placeholder="Descrizione completa dell'evento..."></textarea>
+        </div>
+      </div>
+
+      <div id="eventi-admin-list" class="eventi-admin-list" aria-label="Elementi caricati"></div>
+
+      <div class="eventi-admin-actions">
+        <button type="button" id="eventi-admin-add" class="btn btn-gold">Aggiungi Contenuto</button>
+        <button type="button" id="eventi-admin-save" class="btn btn-outline">Salva Eventi</button>
+        <button type="button" id="eventi-admin-reset" class="btn btn-outline">Reset</button>
+        <button type="button" id="eventi-admin-change-pin" class="btn btn-outline">Cambia PIN</button>
+      </div>
+
+      <p id="eventi-admin-status" class="eventi-admin-status" aria-live="polite"></p>
+      <p class="eventi-admin-hint">Apri/chiudi pannello con Ctrl + Shift + E</p>
+    </div>
+  </div>
+
+  <div id="eventi-popup" role="dialog" aria-modal="true" aria-label="Dettaglio evento" tabindex="-1">
+    <div class="eventi-popup-panel">
+      <button class="eventi-popup-close" aria-label="Chiudi popup evento">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+
+      <div class="eventi-popup-media-wrap">
+        <img id="eventi-popup-img" src="" alt="" class="eventi-popup-img" />
+        <video id="eventi-popup-video" class="eventi-popup-video" controls playsinline preload="metadata"></video>
+      </div>
+
+      <div class="eventi-popup-body">
+        <h3 id="eventi-popup-title" class="eventi-popup-title"></h3>
+        <p id="eventi-popup-desc" class="eventi-popup-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-gold-rule"></div>
+
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand-row">
+            <div class="footer-brand-circle"><img src="img/logo_1.jpg" alt="Logo Garibaldino" /></div>
+            <div>
+              <div class="footer-brand-name">Garibaldino</div>
+              <div class="footer-brand-claim">Cocktail Bar · Cucina · Club</div>
+            </div>
+          </div>
+          <p class="footer-desc">Un luogo dove cocktail artigianali, cucina di qualita e atmosfera club si fondono in un'esperienza unica nel cuore di Sassuolo.</p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Naviga</div>
+          <ul class="footer-links" role="list">
+            <li><a class="footer-link" href="index.html">Home</a></li>
+            <li><a class="footer-link" href="menu.html">Tutto il Menu</a></li>
+            <li><a class="footer-link" href="eventi.html">Eventi</a></li>
+            <li><a class="footer-link" href="index.html#prenota">Prenota</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Contatti</div>
+          <div class="footer-contact-item">Piazza Giuseppe Garibaldi 50<br />41049 Sassuolo (MO)</div>
+          <div class="footer-contact-item"><a href="tel:+390536883568">0536 883568</a></div>
+          <div class="footer-contact-item"><a href="mailto:garibaldino.sassuolo@gmail.com">garibaldino.sassuolo@gmail.com</a></div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">© <span id="footer-year">2024</span> Garibaldino. Tutti i diritti riservati.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top" aria-label="Torna in cima alla pagina" title="Torna in cima">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
+         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <script src="js/main.js"></script>
+  <script src="js/eventi.js"></script>
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+    document.documentElement.classList.remove('no-js');
+  </script>
+</body>
+</html>

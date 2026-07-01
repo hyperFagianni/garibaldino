@@ -1,0 +1,54 @@
+GUIDA DEPLOY NETLIFY — GARIBALDINO
+====================================
+
+1. PREREQUISITI
+----------------
+- Repository collegato a Netlify (GitHub/GitLab/Bitbucket).
+- Cartella del sito: gargaldino
+- File di configurazione già presente: netlify.toml
+- Function serverless già pronta: gargaldino/netlify/functions/eventi.mjs
+- Frontend Eventi già collegato: gargaldino/js/eventi.js
+- Dipendenze dichiarate in: gargaldino/package.json
+
+2. CREAZIONE DEL SITO SU NETLIFY
+--------------------------------
+1. Vai su Netlify > "Add new site" > "Import an existing project".
+2. Collega il repository Git del progetto.
+3. Imposta i seguenti parametri di build:
+
+   - Base directory:       gargaldino
+   - Build command:        (lasciare vuoto, sito statico)
+   - Publish directory:    .
+   - Functions directory:  netlify/functions
+
+4. Conferma e avvia il primo deploy.
+
+3. VERIFICA POST-DEPLOY
+------------------------
+1. Apri il sito pubblicato e vai sulla pagina Eventi.
+2. Apri il pannello admin con la combinazione: Ctrl + Shift + E
+3. Inserisci il PIN (default: 2580). Puoi cambiarlo dal pannello stesso.
+4. Carica un'immagine o un video di prova con titolo e descrizione.
+5. Premi "Salva Eventi" e controlla che il contenuto compaia nella gallery.
+
+4. CONTROLLI IN CASO DI PROBLEMI
+---------------------------------
+- Le immagini/video non si vedono:
+  Verifica che i file siano stati caricati correttamente e che il browser
+  non stia bloccando risorse.
+
+- Il salvataggio non funziona:
+  Controlla nella dashboard Netlify che la function "eventi" sia stata
+  distribuita correttamente (sezione Functions del sito).
+
+- In locale (senza Netlify) il salvataggio resta solo nel browser:
+  è il comportamento atteso, perché la persistenza condivisa richiede
+  la function /api/eventi attiva su Netlify (Netlify Blobs).
+
+5. NOTE IMPORTANTI
+-------------------
+- La persistenza condivisa tra TUTTI i visitatori funziona solo dopo il
+  deploy su Netlify, perché si basa su Netlify Blobs tramite l'endpoint
+  /api/eventi.
+- Senza Netlify (es. apertura file in locale) il sito usa solo una cache
+  locale nel browser come fallback, NON condivisa tra utenti.

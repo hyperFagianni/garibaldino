@@ -55,6 +55,9 @@
   .reviews-big-score { font-size: 4rem; }
   .reviews-cards-grid { grid-template-columns: repeat(3, 1fr); }
 
+  /* Eventi */
+  .eventi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
   /* Contacts */
   .contatti-grid { grid-template-columns: 1fr; gap: 40px; }
   .contatti-map-col { min-height: 320px; }
@@ -124,6 +127,32 @@
   /* Reviews */
   .reviews-cards-grid { grid-template-columns: 1fr; }
   .reviews-score-col { text-align: center; align-items: center; }
+
+  /* Eventi */
+  .eventi-grid { grid-template-columns: 1fr; }
+  #eventi-popup { padding: 14px; }
+  .eventi-popup-panel { border-radius: var(--radius-lg); }
+  .eventi-popup-panel { flex-direction: column; }
+  .eventi-popup-media-wrap {
+    width: 100%;
+    height: auto;
+    max-height: 60vh;
+  }
+  .eventi-popup-img,
+  .eventi-popup-video {
+    width: 100%;
+    height: auto;
+    max-height: 60vh;
+  }
+  .eventi-popup-body {
+    width: 100%;
+    min-width: 0;
+    padding: 20px 18px 24px;
+    justify-content: flex-start;
+  }
+  .eventi-admin-panel { padding: 18px; }
+  .eventi-admin-actions { flex-direction: column; }
+  .eventi-admin-actions .btn { width: 100%; }
 
   /* Booking form */
   .booking-form-glass { padding: 28px 24px; }
