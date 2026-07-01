@@ -245,23 +245,23 @@ function buildCocktailSection() {
 const CUCINA_META = {
   bruschette: {
     label: 'Warm-Up Bites', subtitle: "Bruschette di pane casereccio — L'opening perfetto!",
-    img: '/gargaldino/img/bruschetta.webp'
+    img: './img/bruschetta.webp'
   },
   taglieri: {
     label: 'Vinyl Bites', subtitle: 'Taglieri da gustare in loop!',
-    img: '/gargaldino/img/tagliere.webp'
+    img: './img/tagliere.webp'
   },
   piadine: {
     label: 'Street Beats', subtitle: 'Piadine del Direttore',
-    img: '/gargaldino/img/piadina.webp'
+    img: './img/piadina.webp'
   },
   hotdog: {
     label: 'Rolling Beats', subtitle: 'Hot Dogs del Direttore',
-    img: '/gargaldino/img/hotdog.webp'
+    img: './img/hotdog.webp'
   },
   burger: {
     label: 'Smash Burger Drop', subtitle: 'Con Bun artigianale — Bassi potenti, sapori esplosivi!',
-    img: '/gargaldino/img/smash.webp'
+    img: './img/smash.webp'
   },
   sandwich: {
     label: 'Naked Sandwich', subtitle: 'Con pane ai cereali — Mix di sapori in perfetta armonia!',
