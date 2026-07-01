@@ -1320,7 +1320,336 @@ h1, h2, h3, h4 {
 .lightbox-prev { left: 16px; }
 .lightbox-next { right: 16px; }
 
-/* === 19. REVIEWS === */
+/* === 19. EVENTI === */
+#eventi {
+  background: linear-gradient(180deg, var(--noir) 0%, #141414 100%);
+}
+
+.eventi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.eventi-card {
+  position: relative;
+  border: 1px solid rgba(199,168,107,0.14);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: rgba(255,255,255,0.02);
+  transition: transform var(--t-mid), border-color var(--t-fast), box-shadow var(--t-fast);
+  cursor: pointer;
+}
+
+.eventi-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(199,168,107,0.38);
+  box-shadow: var(--shadow-sm);
+}
+
+.eventi-card-img-wrap {
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  background: #0f0f0f;
+}
+
+.eventi-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--t-slow);
+}
+
+.eventi-card-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--t-slow);
+}
+
+.eventi-card:hover .eventi-card-img,
+.eventi-card:hover .eventi-card-video {
+  transform: scale(1.08);
+}
+
+.eventi-card-body {
+  padding: 14px;
+}
+
+.eventi-card-title {
+  font-family: var(--font-serif-lux);
+  font-size: 1rem;
+  color: var(--cream);
+  margin-bottom: 0;
+}
+
+.eventi-empty {
+  grid-column: 1 / -1;
+  border: 1px dashed rgba(199,168,107,0.35);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  color: var(--muted-fg);
+  text-align: center;
+}
+
+#eventi-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 10020;
+  background: rgba(8,8,8,0.88);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+#eventi-popup.active {
+  display: flex;
+}
+
+.eventi-popup-panel {
+  position: relative;
+  width: min(1000px, 100%);
+  max-height: 92vh;
+  overflow: auto;
+  border: 1px solid rgba(199,168,107,0.2);
+  border-radius: var(--radius-xl);
+  background: #111;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: stretch;
+}
+
+.eventi-popup-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(199,168,107,0.3);
+  background: rgba(18,18,18,0.8);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.eventi-popup-media-wrap {
+  flex: 1.15 1 0;
+  min-width: 0;
+  height: clamp(320px, 72vh, 760px);
+  overflow: hidden;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eventi-popup-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.eventi-popup-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: none;
+  background: #000;
+}
+
+.eventi-popup-body {
+  flex: 0.85 1 0;
+  min-width: 280px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.eventi-popup-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+  margin: 0;
+}
+
+.eventi-popup-desc {
+  color: var(--cream);
+  line-height: 1.75;
+  font-size: 0.95rem;
+  white-space: pre-line;
+  word-break: break-word;
+  margin: 0;
+}
+
+#eventi-admin {
+  position: fixed;
+  inset: 0;
+  z-index: 10030;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(6,6,6,0.84);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  padding: 20px;
+}
+
+#eventi-admin.active {
+  display: flex;
+}
+
+.eventi-admin-panel {
+  position: relative;
+  width: min(760px, 100%);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(199,168,107,0.28);
+  background: #111;
+  box-shadow: var(--shadow-lg);
+  padding: 24px;
+}
+
+.eventi-admin-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(199,168,107,0.35);
+  color: var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eventi-admin-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.eventi-admin-subtitle {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+}
+
+.eventi-admin-textarea {
+  width: 100%;
+  min-height: 140px;
+  resize: vertical;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(199,168,107,0.18);
+  background: #0c0c0c;
+  color: var(--cream);
+  padding: 14px;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.eventi-admin-form {
+  display: grid;
+  gap: 12px;
+}
+
+.eventi-admin-field {
+  display: grid;
+  gap: 6px;
+}
+
+.eventi-admin-field label {
+  font-size: 0.78rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.eventi-admin-input {
+  width: 100%;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(199,168,107,0.18);
+  background: #0c0c0c;
+  color: var(--cream);
+  padding: 12px;
+  font-size: 0.88rem;
+}
+
+.eventi-admin-list {
+  margin-top: 12px;
+  border: 1px solid rgba(199,168,107,0.15);
+  border-radius: var(--radius-md);
+  padding: 10px;
+  max-height: 180px;
+  overflow: auto;
+  display: grid;
+  gap: 8px;
+}
+
+.eventi-admin-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(199,168,107,0.12);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+}
+
+.eventi-admin-list-item-title {
+  font-size: 0.84rem;
+  color: var(--cream);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.eventi-admin-list-empty {
+  color: var(--muted-fg);
+  font-size: 0.8rem;
+}
+
+.eventi-admin-remove {
+  border: 1px solid rgba(199,168,107,0.25);
+  color: var(--gold-soft);
+  border-radius: var(--radius-sm);
+  padding: 4px 8px;
+  font-size: 0.72rem;
+}
+
+.eventi-admin-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.eventi-admin-status {
+  min-height: 20px;
+  margin-top: 10px;
+  font-size: 0.82rem;
+  color: var(--gold-soft);
+}
+
+.eventi-admin-hint {
+  margin-top: 6px;
+  color: var(--muted-fg);
+  font-size: 0.74rem;
+}
+
+/* === 20. REVIEWS === */
 #recensioni {
   background: var(--carbone);
   padding: var(--section-py) 0;
