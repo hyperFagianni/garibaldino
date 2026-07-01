@@ -245,23 +245,23 @@ function buildCocktailSection() {
 const CUCINA_META = {
   bruschette: {
     label: 'Warm-Up Bites', subtitle: "Bruschette di pane casereccio — L'opening perfetto!",
-    img: 'https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?w=600&q=85&auto=format&fit=crop'
+    img: '/gargaldino/img/bruschetta.webp'
   },
   taglieri: {
     label: 'Vinyl Bites', subtitle: 'Taglieri da gustare in loop!',
-    img: 'https://images.unsplash.com/photo-1544025162-d76cedef895c?w=600&q=85&auto=format&fit=crop'
+    img: '/gargaldino/img/tagliere.webp'
   },
   piadine: {
     label: 'Street Beats', subtitle: 'Piadine del Direttore',
-    img: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=85&auto=format&fit=crop'
+    img: '/gargaldino/img/piadina.webp'
   },
   hotdog: {
     label: 'Rolling Beats', subtitle: 'Hot Dogs del Direttore',
-    img: 'https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=600&q=85&auto=format&fit=crop'
+    img: '/gargaldino/img/hotdog.webp'
   },
   burger: {
     label: 'Smash Burger Drop', subtitle: 'Con Bun artigianale — Bassi potenti, sapori esplosivi!',
-    img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d?w=600&q=85&auto=format&fit=crop'
+    img: '/gargaldino/img/smash.webp'
   },
   sandwich: {
     label: 'Naked Sandwich', subtitle: 'Con pane ai cereali — Mix di sapori in perfetta armonia!',
